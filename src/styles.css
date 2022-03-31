@@ -1,8 +1,13 @@
 .calculator {
   text-align: center;
   margin: 0 auto;
-  padding-top: 200px;
+  padding: 30px;
+  padding-top: 50px;
   width: 400px;
+  background-color: rgb(203, 255, 255);
+  border: 20px outset green;
+  border-radius: 50px;
+  box-shadow: 20px 20px 10px grey;
 }
 
 .calculator-screen {
@@ -11,10 +16,13 @@
   background-color: #252525;
   color: #ffffff;
   text-align: right;
-  font-size: 36px;
+  font-size: 30pt;
   border: none;
+  border-radius: 10px;
   padding: 0 20px;
+  margin-bottom: 15px;
   box-sizing: border-box;
+  box-shadow: 5px 5px 20px inset grey;
 }
 
 .calculator-keys {
@@ -28,28 +36,36 @@
 button {
   height: 80px;
   background-color: rgb(99, 97, 97);
-  border: 1px solid black;
-  font-size: 32;
+  border: 0 solid black;
+  font-size: 30pt;
   color: #ffffff;
   width: 25%;
   outline: none;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: #5dca88;
+  box-shadow: 0 6px hsl(144, 65%, 29%);
 }
 
-.all-clear{
-  width: 50%;
+.all-clear {
+  width: 53%;
 }
 
-.operator, .equal-sign {
-  background-color: orange;
+.operator,
+.equal-sign {
+  background-color: rgb(0, 224, 194);
 }
 
 button:hover {
-  background-color: rgb(44, 43, 43);
+  background-color: hsl(144, 64%, 43%);
+}
+.operator:hover,
+.equal-sign:hover {
+  background-color: rgb(0, 145, 125);
 }
 
-.operator:hover, .equal-sign:hover {
-  background-color: orangered
+button:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
 }
-
-
-
