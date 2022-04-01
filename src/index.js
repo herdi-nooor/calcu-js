@@ -48,6 +48,7 @@ const inputOperator = (operator) => {
   }
   calculationOperator = operator;
   currentNumber = "0";
+  updateScreen(currentNumber);
 };
 
 // calculation event function
@@ -76,11 +77,18 @@ const calculate = () => {
     default:
       break;
   }
+  updatePrevCalcu(prevNumber, calculationOperator, currentNumber, result);
   if (prevNumber === "0") {
     currentNumber = "0";
   }
   currentNumber = result;
   calculationOperator = "";
+};
+
+const prevcalcu = document.querySelector(".prevcalcu");
+
+const updatePrevCalcu = (prev, Operator, curren, result) => {
+  prevcalcu.value = prev + " " + Operator + " " + curren + " = " + result;
 };
 
 // clenner function
@@ -90,6 +98,7 @@ const claerAll = () => {
   prevNumber = "";
   calculationOperator = "";
   currentNumber = "0";
+  prevcalcu.value = " ";
 };
 
 clearBtn.addEventListener("click", () => {
@@ -130,5 +139,8 @@ zero.addEventListener("click", () => {
   if (calculatorScreen.value === "0") {
     claerAll();
     updateScreen("0");
+  } else {
+    inputNumber("0");
+    updateScreen(currentNumber);
   }
 });
