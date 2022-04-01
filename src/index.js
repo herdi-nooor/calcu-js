@@ -21,6 +21,24 @@ const updateScreen = (number) => {
   calculatorScreen.value = number;
 };
 
+const plusminus = document.querySelector(".plusminus");
+
+plusminus.addEventListener("click", (evet) => {
+  let cur = '';
+  let cek = String(currentNumber);
+  const firstDigitStr = String(currentNumber)[0];
+
+  if (firstDigitStr === "-") {
+    cur = cek.substring(1);
+    currentNumber = Number(cur) ;
+    updateScreen(currentNumber);
+  } else {
+    cur = "-" + currentNumber;
+    currentNumber = cur ;
+    updateScreen(currentNumber);
+  }
+});
+
 // input function
 const inputNumber = (number) => {
   if (currentNumber === "0") {
